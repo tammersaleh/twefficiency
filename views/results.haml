@@ -1,0 +1,10 @@
+#results
+  .username
+    = link_to "@#{ @username }", "http://twitter.com/#{@username}"
+  .text
+    has a twitter efficiency of
+  .twefficiency
+    = twefficiency(@twefficiency)
+  
+#searchagain 
+  = link_to "Search again!", "/"

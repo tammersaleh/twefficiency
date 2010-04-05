@@ -1,0 +1,10 @@
+log/*
+tmp/**/*
+tmp/*
+*.DS_Store
+coverage*
+*.swp
+webrat.*
+
+!.keep
+

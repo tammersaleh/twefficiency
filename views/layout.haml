@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title
+      Twefficiency
+      = "for #{@username}" if @username
+
+    = stylesheet_link_tag 'blueprint/src/reset.css',   :media => "screen, projection"
+    = stylesheet_link_tag 'blueprint/src/typography.css',   :media => "screen, projection"
+    /[if IE]
+      = stylesheet_link_tag 'blueprint/lib/ie', :media => "screen, projection"
+    = stylesheet_link_tag 'blueprint/print',    :media => "print"
+    = stylesheet_link_tag 'application',        :media => "screen"
+
+  %body
+    #banner
+      %h1
+        %a{:href => "/"} Twefficiency
+    #tagline
+      How close do you get to 140?
+  
+    #content
+      = yield
+    #footer
+      .citation
+        Copyright Tammer Saleh
+        = Time.now.year
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"
+    = javascript_include_tag "application.js"
+    

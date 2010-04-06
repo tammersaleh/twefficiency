@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/ratpack'
 require 'helpers'
 require 'haml'
+require 'sass'
 require 'twitter'
 
 class Twefficiency < Sinatra::Base
@@ -12,7 +13,7 @@ class Twefficiency < Sinatra::Base
     haml :index
   end
 
-  get '/:username' do
+  get '/for' do
     @username = params[:username]
     @tweets = Twitter::Search.new.from(@username).to_a
     @total_chars = @tweets.inject(0) {|sum, tweet| sum += tweet.text.length }

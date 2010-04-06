@@ -1,10 +1,13 @@
 #results
-  .username
-    = link_to "@#{ @username }", "http://twitter.com/#{@username}"
-  .text
-    has a twitter efficiency of
+  %p
+    %span.username
+      = link_to "@#{ @username }", "http://twitter.com/#{@username}"
+    uses
   .twefficiency
     = twefficiency(@twefficiency)
+  %p
+    of their avilable 
+    %em tweetspace.
   
 #searchagain 
   = haml :"_form", :layout => false

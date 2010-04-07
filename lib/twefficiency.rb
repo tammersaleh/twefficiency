@@ -6,10 +6,15 @@ require 'sass'
 require 'twitter'
 
 class Twefficiency < Sinatra::Base
+  root_dir = File.join(File.dirname(__FILE__), "..")
+  env = ENV['RACK_ENV'].to_sym
+
+  set :root,        root_dir
+  set :environment, env
+  set :public,      File.expand_path(root_dir + '/public')
+
   helpers Sinatra::Ratpack
   helpers Helpers
-
-  set :public,      File.join(File.dirname(__FILE__), "..", "public")
 
   get "/" do
     haml :index

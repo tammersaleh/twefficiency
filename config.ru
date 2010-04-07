@@ -15,12 +15,12 @@ ENV["GEM_HOME"] = rvm_gemset_dir if File.directory?(rvm_gemset_dir)
 
 require 'rubygems'
 require 'sinatra'
-require 'twefficiency'
 
-set :environment, env
-set :root,        root_dir
 set :app_file,    File.join(root_dir, "lib", 'twefficiency.rb')
+
 disable :run
+
+require 'twefficiency'
 
 run Twefficiency
 

@@ -31,7 +31,7 @@ class Twefficiency < Sinatra::Base
     haml :about
   end
 
-  get '/stylesheets/:sheet.css' do
+  get '/stylesheets/sass/:sheet.css' do
     content_type 'text/css', :charset => 'utf-8'
     sass :"stylesheets/#{params[:sheet]}"
   end

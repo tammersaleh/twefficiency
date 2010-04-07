@@ -1,5 +1,7 @@
 $LOAD_PATH << File.join(File.dirname(__FILE__), "lib")
 
+require 'pathname'
+
 root_dir = Pathname(__FILE__).dirname
 env = ENV['RACK_ENV'].to_sym
 

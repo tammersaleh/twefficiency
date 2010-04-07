@@ -9,6 +9,8 @@ class Twefficiency < Sinatra::Base
   helpers Sinatra::Ratpack
   helpers Helpers
 
+  set :public,      File.join(File.dirname(__FILE__), "..", "public")
+
   get "/" do
     haml :index
   end
